@@ -2,6 +2,27 @@
 
 A very simple textmode GUI library for OpenComputers
 
+```
+local curlib = require("curlib");
+local align = require("textalign");
+
+local app = curlib.app:new();
+local win1 = curlib.window:new({ x = 3, y = 2, 
+  width = 60, height = 20, shadow = true});
+  
+app:addChild(win1);
+
+local button = curlib.button:new({ x = 1, y = 1, width = 8, height = 1,  text = "OK", shadow = true});
+
+button.onClick = function(control, x, y) 
+  app.status("my click function called");
+end
+
+win1:addChild(button);
+app:init();
+
+```
+
 ## Code Example
 
 ```
